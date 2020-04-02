@@ -4,15 +4,16 @@
 		<link href="style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<div class="codeContainer">
-			<div class="text" id="lineNo">1.</div>
-			<textarea class="text" id="bfCode"></textarea>
+		<div id="codeContainer">
+			<div class="text code" id="lineNo">1.</div>
+			<textarea class="text code" id="bfCode"></textarea>
 		</div>
 		<br>
 		<button onclick="runBrainfuck(Code.value)">compile and run</button>
 		<br>
 		<textarea readonly class="text" id="arrOut"></textarea>
-		<div class="text" id="output"></div>
+		<br>
+		<textarea readonly class="text" id="consoleOut"></textarea>
 		<script src="script.js"></script>
 	</body>
 </html>

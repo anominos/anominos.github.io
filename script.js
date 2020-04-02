@@ -2,6 +2,7 @@ var Code = document.getElementById("bfCode");
 
 window.addEventListener("input", function(event) {
     updateLineNo(Code.value);
+    updateHeight(Code.value);
 });
 
 
@@ -15,6 +16,21 @@ function updateLineNo(code){
         }
     }
     document.getElementById("lineNo").innerHTML = lineNoTxt;
+}
+
+function updateHeight(code){
+    let lines=1;
+    for(let i of code){
+        if(i=="\n"){
+            lines++;
+        }
+    }
+    lines = Math.max(lines,30);
+    for(let divv of document.getElementsByClassName("code")){
+        console.log(divv, divv.style);
+        let height = (lines*(16+2) + 2) ; // 16 is font size, +2 for gap between lines? and +2 for top and bottom?
+        divv.style.height = height+"px";
+    }
 }
 
 function brainfuckToJS(code){
@@ -56,6 +72,7 @@ function brainfuckToJS(code){
 }
 
 function runBrainfuck(code){
+    document.getElementById("console").innerHTML="";
     var compiled = brainfuckToJS(code);
     window.URL = window.URL || window.webkitURL;
     var blob;
@@ -84,7 +101,7 @@ function runBrainfuck(code){
             document.getElementById("arrOut").innerHTML=outHex;
         }
         else if (typeof e.data == "string"){
-            document.getElementById("output").innerHTML+=e.data;
+            document.getElementById("console").innerHTML+=e.data;
         }
     }
 }

@@ -10,38 +10,45 @@ body{
 
 #codeContainer{
 	overflow-x: hidden;
-    overflow-y: scroll;
+	overflow-y: auto;
+	height:542px;
+	border:none;
+	padding:none;
+	margin:none;
 }
 
 #bfCode,#arrOut{
 	background-color:#000000;
 	border:none;
-	width: 50%;
-    overflow: auto;
+	width: 90%;
     display: block;
 	word-wrap: normal;
 	resize:none;
 	outline:none;
+	overflow:hidden;
 }
 #bfCode, #lineNo{
-	height: 521px;
-    white-space: pre;
+	height: 542px;
+	white-space: pre;
+	float:left;
 }
 #lineNo {
 	background-color: #2f4f4f;
-	width:30px;
-	float:left;
+	width:40px;
 	border:none;
+	text-align: right;
 }
 
 #arrOut {
 	width:300px;
 	word-wrap: break-word;
 	height: 200px;
-	float:left;
+	overflow: auto;
 }
 
-#output {
+#console {
 	display:block;
 	white-space: pre;
+	overflow: auto ;
+	background-color: #000000;
 }
